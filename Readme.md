@@ -118,20 +118,21 @@ A Node.js-based Command-Line Interface (CLI) application for managing your daily
 ```json
 {
   "name": "todolist-cli",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "main": "index.js",
   "dependencies": {
+    "chalk": "^2.4.2",
     "commander": "^13.1.0"
   },
-  "devDependencies": {},
   "scripts": {
     "todo": "node index.js"
   },
-  "keywords": ["todo", "cli", "task-manager"],
+  "keywords": ["todo", "cli", "task-manager", "productivity", "nodejs"],
   "author": "Arnab Saha",
   "license": "ISC",
-  "description": "A CLI-based to-do list application built with Node.js."
+  "description": "A Node.js-based CLI to-do list application for managing daily tasks effectively."
 }
+
 ```
 
 ## Contributing
