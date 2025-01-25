@@ -35,15 +35,15 @@ A Node.js-based Command-Line Interface (CLI) application for managing your daily
 
 ## Usage
 
-1. **View All To-Dos:**
+1. **Reset the To-Do List:**
 
    ```bash
-   npm run todo read
+   npm run todo reset
    ```
 
-   Displays all the to-dos stored in the `todos.json` file.
+   Clears all tasks from the to-do list.
 
-2. **Add a To-Do:**
+3. **Add a To-Do:**
 
    ```bash
    npm run todo add "your task description"
@@ -51,7 +51,7 @@ A Node.js-based Command-Line Interface (CLI) application for managing your daily
 
    Adds a new task to the to-do list.
 
-3. **Mark a To-Do as Done:**
+4. **Mark a To-Do as Done:**
 
    ```bash
    npm run todo done "your task description"
@@ -59,13 +59,13 @@ A Node.js-based Command-Line Interface (CLI) application for managing your daily
 
    Removes a task matching the given description.
 
-4. **Reset the To-Do List:**
+1. **View All To-Dos:**
 
    ```bash
-   npm run todo reset
+   npm run todo read
    ```
 
-   Clears all tasks from the to-do list.
+   Displays all the to-dos stored in the `todos.json` file.
 
 ## Example
 
