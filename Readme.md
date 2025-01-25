@@ -24,7 +24,7 @@ A Node.js-based Command-Line Interface (CLI) application for managing your daily
 2. Navigate to the project directory:
 
    ```bash
-   cd todolist-cli
+   cd To-Do-List-CLI-Application
    ```
 
 3. Install dependencies:
