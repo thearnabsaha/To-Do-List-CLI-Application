@@ -18,7 +18,7 @@ A Node.js-based Command-Line Interface (CLI) application for managing your daily
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/todolist-cli.git
+   git clone https://github.com/thearnabsaha/To-Do-List-CLI-Application.git
    ```
 
 2. Navigate to the project directory:
@@ -128,7 +128,7 @@ A Node.js-based Command-Line Interface (CLI) application for managing your daily
     "todo": "node index.js"
   },
   "keywords": ["todo", "cli", "task-manager"],
-  "author": "Your Name",
+  "author": "Arnab Saha",
   "license": "ISC",
   "description": "A CLI-based to-do list application built with Node.js."
 }
@@ -143,9 +143,6 @@ Contributions are welcome! Feel free to:
 3. Commit your changes and push the branch.
 4. Open a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
