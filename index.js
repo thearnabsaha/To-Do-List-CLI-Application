@@ -30,11 +30,15 @@ program.command('add')
         return;
       }
       todos=JSON.parse(data)
-      todos.push({task:program.args[1]})
-      fs.writeFile('todos.json', `${JSON.stringify(todos)}`, (err) => {
-        if (err) throw err;
-        console.log('File written successfully');
-      });
+      if(!todos.filter(e=>e.task===program.args[1].trim()).length){
+        todos.push({task:program.args[1].trim()})
+        fs.writeFile('todos.json', `${JSON.stringify(todos)}`, (err) => {
+          if (err) throw err;
+          console.log('File written successfully');
+        });
+      }else{
+        console.log("Task already exists");
+      }
     });
   })
 
