@@ -61,11 +61,47 @@ program.command('done')
         return;
       }
       todos=JSON.parse(data)
-      todos=todos.filter(e=>e.task!==program.args[1].trim())
-      fs.writeFile('todos.json', `${JSON.stringify(todos)}`, (err) => {
-        if (err) throw err;
-        console.log(chalk.green('Task removed successfully'));
-      });
+      if(todos.filter(e=>e.task===program.args[1].trim()).length){
+        
+        todos=todos.filter(e=>e.task!==program.args[1].trim())
+        fs.writeFile('todos.json', `${JSON.stringify(todos)}`, (err) => {
+          if (err) throw err;
+          console.log(chalk.green('Task removed successfully'));
+        });
+      }else{
+        console.log(chalk.green('Task does not exist'));
+      }
+    });
+  })
+
+program.command('update')
+  .description(chalk.green('to update a todo (node index.js update "buy coffee" "buy tea") '))
+  .argument('<string>', 'old todo')
+  .argument('<string>', 'new todo')
+  .action(()=>{
+    fs.readFile('todos.json', 'utf8', (err, data) => {
+      if (err) {
+        console.error('Error reading file:', err);
+        console.log(chalk.green('Reset the Tasklist First'));
+        console.log(chalk.green(`Use this code first : ${chalk.white("npm run todo reset")}`));
+        return;
+      }
+      todos=JSON.parse(data)
+      if(!todos.filter(e=>e.task===program.args[2].trim()).length){
+        if(todos.filter(e=>e.task===program.args[1].trim()).length){
+          
+          todos=todos.filter(e=>e.task!==program.args[1].trim())
+          todos.push({task:program.args[2].trim()})
+          fs.writeFile('todos.json', `${JSON.stringify(todos)}`, (err) => {
+            if (err) throw err;
+            console.log(chalk.green('Task Updated successfully'));
+          });
+        }else{
+          console.log(chalk.green('Given Task Does not exists'));
+        }
+      }else{
+        console.log(chalk.green('New Task already Exists '));
+      }
     });
   })
 

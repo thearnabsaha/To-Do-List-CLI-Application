@@ -35,21 +35,29 @@ A Node.js-based Command-Line Interface (CLI) application for managing your daily
 
 ## Usage
 
-1. **Reset the To-Do List:**
+1. **View All To-Dos:**
 
    ```bash
-   npm run todo reset
+   npm run todo read
    ```
 
-   Clears all tasks from the to-do list.
+   Displays all the to-dos stored in the `todos.json` file.
 
-3. **Add a To-Do:**
+2. **Add a To-Do:**
 
    ```bash
    npm run todo add "your task description"
    ```
 
    Adds a new task to the to-do list.
+
+3. **Update a To-Do:**
+
+   ```bash
+   npm run todo update "old task description" "new task description"
+   ```
+
+   Updates an existing task with a new description.
 
 4. **Mark a To-Do as Done:**
 
@@ -59,13 +67,13 @@ A Node.js-based Command-Line Interface (CLI) application for managing your daily
 
    Removes a task matching the given description.
 
-1. **View All To-Dos:**
+5. **Reset the To-Do List:**
 
    ```bash
-   npm run todo read
+   npm run todo reset
    ```
 
-   Displays all the to-dos stored in the `todos.json` file.
+   Clears all tasks from the to-do list.
 
 ## Example
 
@@ -91,13 +99,19 @@ A Node.js-based Command-Line Interface (CLI) application for managing your daily
    ]
    ```
 
-3. Mark a task as done:
+3. Update a task:
 
    ```bash
-   npm run todo done "Buy coffee"
+   npm run todo update "Buy coffee" "Buy tea"
    ```
 
-4. Reset the list:
+4. Mark a task as done:
+
+   ```bash
+   npm run todo done "Buy tea"
+   ```
+
+5. Reset the list:
 
    ```bash
    npm run todo reset
@@ -118,7 +132,7 @@ A Node.js-based Command-Line Interface (CLI) application for managing your daily
 ```json
 {
   "name": "todolist-cli",
-  "version": "2.0.1",
+  "version": "1.0.1",
   "main": "index.js",
   "dependencies": {
     "chalk": "^2.4.2",
@@ -128,11 +142,10 @@ A Node.js-based Command-Line Interface (CLI) application for managing your daily
     "todo": "node index.js"
   },
   "keywords": ["todo", "cli", "task-manager", "productivity", "nodejs"],
-  "author": "Arnab Saha",
+  "author": "Your Name",
   "license": "ISC",
   "description": "A Node.js-based CLI to-do list application for managing daily tasks effectively."
 }
-
 ```
 
 ## Contributing
@@ -143,8 +156,3 @@ Contributions are welcome! Feel free to:
 2. Create a new branch for your feature or bug fix.
 3. Commit your changes and push the branch.
 4. Open a pull request.
-
-
----
-
-Enjoy managing your tasks with this CLI-based to-do list!
